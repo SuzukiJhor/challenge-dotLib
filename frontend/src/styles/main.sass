@@ -1,0 +1,17 @@
+@use 'variables'
+
+*
+    padding: 0
+    margin: 0
+    font-family: variables.$font-stack
+    box-sizing: border-box
+
+body
+    overflow-x: hidden
+    background-color: variables.$body-bg-color
+
+body.dark-mode
+    background-color: variables.$bg-color-secondary
+
+a, svg
+    transition: .4s

@@ -1,0 +1,52 @@
+@use '../variables'
+@use '../mixins'
+
+#searchBar
+    @include mixins.center
+
+.search-container
+    @include mixins.center
+    @include mixins.border
+
+    width: 50vw
+    height: 6em
+    margin: 25px 0
+    background-color: variables.$bg-color-secondary
+
+    @media (max-width: 850px)
+        width: 90vw
+        height: 8vh
+
+input
+    background-color: variables.$bg-color
+    width: 40vw
+    padding: 12px
+    border: none
+    border-radius: 5px
+    outline: none
+    @media (max-width: 850px)
+        width: 70vw
+        height: 4vh
+
+    @media (max-width: 415px)
+        width: 60vw
+
+button
+    @include mixins.btn
+    &:hover
+        cursor: default
+
+    svg
+        fill: #fff
+        width: 40px
+        height: 20px
+
+body.dark-mode
+    .search-container
+        background-color: variables.$body-bg-color
+
+    input
+        @include mixins.border
+
+    button
+        background-color: variables.$bg-color-secondary
