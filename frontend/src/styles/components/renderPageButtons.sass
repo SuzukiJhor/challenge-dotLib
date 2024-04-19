@@ -1,0 +1,36 @@
+@use '../variables'
+@use '../mixins' 
+
+.pagination-button
+    @include mixins.btn
+
+    &:hover
+        background-color: variables.$bg-color-secondary
+        color: #fff
+        cursor: pointer
+
+    &:disabled
+        background-color: #ddd
+        color: #888
+        cursor: not-allowed
+
+    &.active
+        background-color: variables.$bg-color-secondary
+        color: #fff
+
+body.dark-mode
+    .pagination-button
+        color: #fff
+        &:hover
+            background-color: variables.$bg-color
+            color: #fff
+            cursor: pointer
+
+        &:disabled
+            background-color: #333
+            color: #888
+            cursor: not-allowed
+
+        &.active
+            background-color: variables.$bg-color
+            color: #333

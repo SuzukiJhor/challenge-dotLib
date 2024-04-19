@@ -1,0 +1,32 @@
+@use '../variables'
+@use '../mixins' 
+
+.pagination-container
+    @include mixins.center
+    position: fixed
+    bottom: 0
+    left: 0
+    width: 100%
+    padding: 10px
+    height: 8%
+    background-color: variables.$bg-color-secondary
+
+    // .pagination-button
+    //     @include mixins.btn
+
+    //     &:hover
+    //         background-color: variables.$bg-color-secondary
+    //         color: #fff
+
+    //     &:disabled
+    //         background-color: #ddd
+    //         color: #888
+    //         cursor: not-allowed
+
+    //     &.active
+    //         background-color: variables.$bg-color-secondary
+    //         color: #fff
+
+body.dark-mode
+    .pagination-container
+        background-color: #fff
