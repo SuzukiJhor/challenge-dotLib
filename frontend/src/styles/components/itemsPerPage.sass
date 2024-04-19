@@ -1,0 +1,48 @@
+@use '../variables'
+@use '../mixins'
+
+.indice-per-page
+    margin-left: 3%
+
+    @media (max-width: 815px)
+        display: none
+    span
+        position: fixed
+        color: variables.$text-color
+        margin-right: 5px
+
+        @media (max-width: 950px)
+
+            font-size: 14px
+
+    select
+        position: fixed
+        width: 130px
+        padding: 10px
+        font-size: 16px
+        border: 1px solid variables.$bg-color-secondary
+        border-radius: 5px
+        background-color: variables.$bg-color-secondary
+        color: #fff
+        cursor: pointer
+        transition: border-color 0.3s ease
+
+        &::-ms-expand
+            display: none
+        & option
+            font-size: 16px
+            padding: 8px
+            background-color: #fff
+            color: #333
+
+        @media (max-width: 950px)
+            width: 70px
+            font-size: 16px
+
+body.dark-mode
+    .indice-per-page
+        span
+            color: #fff
+        select
+            background-color: variables.$bg-color
+            color: black

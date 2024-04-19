@@ -1,0 +1,79 @@
+@use '../variables'
+@use '../mixins'
+
+.medicine-item
+    display: flex
+    flex-direction: column
+    gap: 8px
+    max-width: 30rem
+    height: 18rem
+    padding: 20px 10px
+    margin: 8px 0
+    background-color: variables.$bg-color
+    border-radius: 15px
+    border: 1px solid variables.$bg-color-secondary
+    box-shadow: 4px 4px 6px 6px variables.$bg-color-secondary
+
+    @media (max-width: 415px)
+        height: 350px
+        width: 300px
+        font-size: 14px
+        gap: 10px
+
+        p
+            font-weight: bold
+
+    @media (max-width: 920px)
+        height: 23rem
+
+p
+
+    color: variables.$text-color
+
+span
+    color: variables.$text-color-secondary
+
+.company
+    font-style: italic
+    color: variables.$text-color-secondary
+    margin-bottom: 5px
+
+.active-principles
+    font-weight: bold
+    color: variables.$text-color
+
+    li
+        color: variables.$text-color-secondary
+        list-style: none
+        margin-top: 5px
+
+.documents
+    @include mixins.center
+    justify-content: start
+    list-style-type: none
+
+    li
+        justify-content: start
+
+    @media (max-width: 920px)
+        flex-direction: column
+        align-items: start
+        gap: 5px
+
+.btn-pdf
+    background-color: variables.$bg-color-secondary
+    height: 3rem
+    color: #fff
+    transition: background-color 0.3s, color 0.3s
+
+    @media (max-width: 415px)
+        gap: 15px
+    &:hover
+        cursor: pointer
+        background-color: variables.$bg-color
+        color: variables.$text-color-secondary
+
+body.dark-mode
+    .medicine-item
+        background-color: variables.$body-bg-color
+        border: none
